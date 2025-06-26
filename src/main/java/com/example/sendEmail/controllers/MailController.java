@@ -1,5 +1,8 @@
 package com.example.sendEmail.controllers;
 
+import com.example.sendEmail.dtos.ApiResponse;
+import com.example.sendEmail.dtos.MailRequest;
+import com.example.sendEmail.dtos.MailResponse;
 import com.example.sendEmail.models.MailModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,5 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface MailController {
 
     @PostMapping("/send")
-    ResponseEntity<String> sendEmail(@RequestBody MailModel mailModel);
-}
+    ResponseEntity<ApiResponse<MailResponse>> sendEmail(@RequestBody MailRequest mailRequest);
+
+
+    }

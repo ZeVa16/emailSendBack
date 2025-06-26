@@ -1,24 +1,35 @@
 package com.example.sendEmail.controllers;
 
+import com.example.sendEmail.dtos.ApiResponse;
+import com.example.sendEmail.dtos.MailRequest;
+import com.example.sendEmail.dtos.MailResponse;
 import com.example.sendEmail.models.MailModel;
-import com.example.sendEmail.services.SendEmailService;
+import com.example.sendEmail.services.SendEmailServicelmpl;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MailControllerlmpl implements MailController {
 
-    private SendEmailService sendEmailService;
-    public MailControllerlmpl(SendEmailService sendEmailService) {
+    private SendEmailServicelmpl sendEmailService;
+    public MailControllerlmpl(SendEmailServicelmpl sendEmailService) {
         this.sendEmailService = sendEmailService;
     }
 
     @Override
-    public ResponseEntity<String> sendEmail(@RequestBody MailModel mailModel){
-        sendEmailService.sendSimpleMail(mailModel);
-        return ResponseEntity.ok("Email sent");
+    public ResponseEntity<ApiResponse<MailResponse>> sendEmail(@RequestBody MailRequest mailRequest){
+
+        MailResponse response = sendEmailService.sendSimpleMail(mailRequest);
+
+        ApiResponse<MailResponse> apiResponse = ApiResponse.<MailResponse>builder()
+                .message("Email Sent")
+                .data(response)
+                .status(HttpStatus.OK)
+                .build();
+        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+
     }
 
 }
