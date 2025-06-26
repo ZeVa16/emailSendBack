@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: demo
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 2022260@utsh.edu.mx
+    password: qhst rrbo ijfs cnok
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+          ssl.trust : smtp.gmail.com
+
+
