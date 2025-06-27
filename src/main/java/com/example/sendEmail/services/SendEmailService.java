@@ -8,5 +8,5 @@ import com.example.sendEmail.dtos.MailResponse;
 public interface SendEmailService {
 
     MailResponse sendSimpleMail(MailRequest mailRequest);
-    String buildBody(MailRequest mailRequest);
+    String buildHtmlBody(MailRequest mailRequest);
 }

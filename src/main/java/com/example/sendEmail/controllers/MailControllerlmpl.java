@@ -3,7 +3,6 @@ package com.example.sendEmail.controllers;
 import com.example.sendEmail.dtos.ApiResponse;
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.dtos.MailResponse;
-import com.example.sendEmail.models.MailModel;
 import com.example.sendEmail.services.SendEmailServicelmpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +23,7 @@ public class MailControllerlmpl implements MailController {
         MailResponse response = sendEmailService.sendSimpleMail(mailRequest);
 
         ApiResponse<MailResponse> apiResponse = ApiResponse.<MailResponse>builder()
-                .message("Email Sent")
+                .message("The email is sent successfully to the user below")
                 .data(response)
                 .status(HttpStatus.OK)
                 .build();

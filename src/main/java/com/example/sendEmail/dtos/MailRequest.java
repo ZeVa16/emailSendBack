@@ -14,6 +14,5 @@ public class MailRequest {
     private String date;
     private String to;
     private String subject;
-    private String body;
 
 }

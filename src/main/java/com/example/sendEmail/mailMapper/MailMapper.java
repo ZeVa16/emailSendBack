@@ -13,7 +13,6 @@ public class MailMapper {
                 .date(mailRequest.getDate())
                 .to(mailRequest.getTo())
                 .subject(mailRequest.getSubject())
-                .body(mailRequest.getBody())
                 .build();
     }
 
