@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notificación de Nueva Cita</title>
+</head>
+<body>
+<p>Hola equipo,</p>
+<p>Se ha agendado una nueva cita para:</p>
+<ul>
+    <li>Nombre: <strong th:text="${name}"></strong></li>
+    <li>Fecha: <strong th:text="${date}"></strong></li>
+    <li>Motivo: <span th:text="${reason}"></span></li>
+</ul>
+<br>
+<p>Por favor, dar seguimiento según el protocolo.</p>
+</body>
+</html>

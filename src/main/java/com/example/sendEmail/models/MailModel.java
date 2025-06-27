@@ -1,22 +1,22 @@
 package com.example.sendEmail.models;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 public class MailModel {
 
     private String name;
-    private String lastName;
     private String date;
     private String to;
     private String subject;
+    private String reason;
 
 }

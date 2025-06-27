@@ -4,6 +4,7 @@ import com.example.sendEmail.dtos.ApiResponse;
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.dtos.MailResponse;
 import com.example.sendEmail.services.SendEmailServicelmpl;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class MailControllerlmpl implements MailController {
     }
 
     @Override
-    public ResponseEntity<ApiResponse<MailResponse>> sendEmail(@RequestBody MailRequest mailRequest){
+    public ResponseEntity<ApiResponse<MailResponse>> sendEmail(@RequestBody @Valid MailRequest mailRequest){
 
         MailResponse response = sendEmailService.sendSimpleMail(mailRequest);
 

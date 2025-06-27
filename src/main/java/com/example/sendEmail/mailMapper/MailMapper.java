@@ -9,7 +9,6 @@ public class MailMapper {
     public static MailModel toEntity(MailRequest mailRequest) {
         return MailModel.builder()
                 .name(mailRequest.getName())
-                .lastName(mailRequest.getLastName())
                 .date(mailRequest.getDate())
                 .to(mailRequest.getTo())
                 .subject(mailRequest.getSubject())
