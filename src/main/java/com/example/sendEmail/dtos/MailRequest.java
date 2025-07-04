@@ -4,11 +4,13 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class MailRequest {
     @NotBlank(message = "the name is required")
     private String name;
@@ -19,5 +21,6 @@ public class MailRequest {
     private String to;
     private String subject;
     private String reason;
+
 
 }
