@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
-public class CalendlyWebHookControllerlmpl implements CalendlyWebHookController {
+public class CalendlyWebHookControllerImpl implements CalendlyWebHookController {
 
     private final CalendlyWebHookService webHookService;
 
-    public CalendlyWebHookControllerlmpl(CalendlyWebHookService webHookService) {
+    public CalendlyWebHookControllerImpl(CalendlyWebHookService webHookService) {
         this.webHookService = webHookService;
     }
     @Override

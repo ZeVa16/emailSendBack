@@ -3,7 +3,7 @@ package com.example.sendEmail.controllers;
 import com.example.sendEmail.dtos.ApiResponse;
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.dtos.MailResponse;
-import com.example.sendEmail.services.SendEmailServicelmpl;
+import com.example.sendEmail.services.SendEmailServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MailControllerlmpl implements MailController {
+public class MailControllerImpl implements MailController {
 
-    private SendEmailServicelmpl sendEmailService;
-    public MailControllerlmpl(SendEmailServicelmpl sendEmailService) {
+    private SendEmailServiceImpl sendEmailService;
+    public MailControllerImpl(SendEmailServiceImpl sendEmailService) {
         this.sendEmailService = sendEmailService;
     }
 

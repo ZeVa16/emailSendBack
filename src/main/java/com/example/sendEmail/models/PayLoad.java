@@ -1,5 +1,6 @@
 package com.example.sendEmail.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,9 @@ import java.util.List;
 public class PayLoad{
     private String name;
     private String email;
-    private String created_at;
+    private String event;
+    private String time;
+    @JsonProperty("questions_and_answers")
     private List<QuestionAnswer> questionAnswerList;
 
 }

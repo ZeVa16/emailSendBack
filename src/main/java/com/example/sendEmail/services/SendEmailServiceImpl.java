@@ -13,7 +13,7 @@ import org.thymeleaf.spring6.SpringTemplateEngine;
 import java.util.List;
 
 @Service
-public class SendEmailServicelmpl implements SendEmailService {
+public class SendEmailServiceImpl implements SendEmailService {
 
     @Autowired
     private JavaMailSender mailSender;
