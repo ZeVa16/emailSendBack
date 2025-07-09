@@ -1,8 +1,8 @@
 package com.example.sendEmail.services;
-
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.models.CalendlyWebHookPayloadModel;
 import com.example.sendEmail.models.QuestionAnswer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpEntity;
@@ -15,7 +15,8 @@ import java.util.Map;
 @Service
 public class CalendlyWebHookServiceImpl implements CalendlyWebHookService {
 
-    private final String TOKEN = "eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzUxNDgyODgzLCJqdGkiOiI4ZTNhYmIzNS0zODM2LTQ3MzUtYmFiNi1jMjEwYjUyZjg2NDUiLCJ1c2VyX3V1aWQiOiJlOTRmNDFjOC02NzRjLTRhYmQtYmVhMi1mNmVlYzBkNTAwYWMifQ.VfOOidMRTkf0aqXV67_GWWzC6F7rS75T6x2vRDmguwy6lMc_eM1dDv8bUPmqgej2s03a-gsREBP6FMs4qhRkmw";
+    @Value("${calendly.api.token}")
+    private String TOKEN;
     private final RestTemplate restTemplate = new RestTemplate();
     private final SendEmailService sendEmailService;
 

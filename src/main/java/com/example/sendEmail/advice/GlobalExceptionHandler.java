@@ -1,7 +1,6 @@
 package com.example.sendEmail.advice;
 
 import com.example.sendEmail.dtos.ApiResponse;
-import com.example.sendEmail.exceptions.MissingFieldsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
