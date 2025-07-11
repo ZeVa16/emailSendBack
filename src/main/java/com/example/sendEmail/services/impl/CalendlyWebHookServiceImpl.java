@@ -1,7 +1,9 @@
-package com.example.sendEmail.services;
+package com.example.sendEmail.services.impl;
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.models.CalendlyWebHookPayloadModel;
 import com.example.sendEmail.models.QuestionAnswer;
+import com.example.sendEmail.services.CalendlyWebHookService;
+import com.example.sendEmail.services.SendEmailService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
@@ -17,8 +19,10 @@ public class CalendlyWebHookServiceImpl implements CalendlyWebHookService {
 
     @Value("${calendly.api.token}")
     private String TOKEN;
+
     private final RestTemplate restTemplate = new RestTemplate();
     private final SendEmailService sendEmailService;
+
 
     public CalendlyWebHookServiceImpl(SendEmailService sendEmailService) {
         this.sendEmailService = sendEmailService;

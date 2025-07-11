@@ -1,18 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Notificación de Nueva Cita</title>
+    <title>Reserva Confirmada - Crispy Kitchen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8f0;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #e0c7a5;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            color: #dd5c18;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-<p>Hola equipo,</p>
-<p>Se ha agendado una nueva cita para:</p>
-<ul>
-    <li>Nombre: <strong th:text="${name}"></strong></li>
-    <li>Fecha: <strong th:text="${date}"></strong></li>
-    <li>Motivo: <span th:text="${reason}"></span></li>
-</ul>
-<br>
-<p>Por favor, dar seguimiento según el protocolo.</p>
+<div class="container">
+    <div class="header">
+        <h1>🍽️ Crispy Kitchen</h1>
+        <p>¡Una nueva reserva ha sido registrada!</p>
+    </div>
+
+    <div class="details">
+        <p><strong>Detalles de la cita:</strong></p>
+        <ul>
+            <li><strong>Nombre:</strong> <span th:text="${name}"></span></li>
+            <li><strong>Fecha:</strong> <span th:text="${date}"></span></li>
+            <li><strong>Detalles:</strong> <span th:text="${reason}"></span></li>
+        </ul>
+    </div>
+
+    <p>Por favor, confirmar y preparar el servicio según el protocolo de atención.</p>
+
+    <div class="footer">
+        <p>Gracias por formar parte de Crispy Kitchen 🍴</p>
+    </div>
+</div>
 </body>
 </html>

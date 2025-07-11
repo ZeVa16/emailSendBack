@@ -1,6 +1,7 @@
-package com.example.sendEmail.services;
+package com.example.sendEmail.services.impl;
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.dtos.MailResponse;
+import com.example.sendEmail.services.SendEmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
-
 import java.util.List;
 
 @Service

@@ -1,5 +1,6 @@
-package com.example.sendEmail.controllers;
+package com.example.sendEmail.controllers.Impl;
 
+import com.example.sendEmail.controllers.CalendlyWebHookController;
 import com.example.sendEmail.models.CalendlyWebHookPayloadModel;
 import com.example.sendEmail.services.CalendlyWebHookService;
 import org.springframework.http.ResponseEntity;

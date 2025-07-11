@@ -1,9 +1,10 @@
-package com.example.sendEmail.controllers;
+package com.example.sendEmail.controllers.Impl;
 
+import com.example.sendEmail.controllers.MailController;
 import com.example.sendEmail.dtos.ApiResponse;
 import com.example.sendEmail.dtos.MailRequest;
 import com.example.sendEmail.dtos.MailResponse;
-import com.example.sendEmail.services.SendEmailServiceImpl;
+import com.example.sendEmail.services.impl.SendEmailServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
