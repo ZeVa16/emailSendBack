@@ -32,8 +32,8 @@ public class SendEmailServiceImpl implements SendEmailService {
             helper.setText(buildHtmlBody(mailRequest), true);
 
             mailSender.send(message);
-
             sendToTeam(mailRequest);
+
             return new MailResponse(mailRequest.getName(),mailRequest.getTo());
         } catch (MessagingException e) {
             throw new RuntimeException("Error while sending email",e);
@@ -45,8 +45,10 @@ public class SendEmailServiceImpl implements SendEmailService {
     public void sendToTeam(MailRequest mailRequest){
         try{
             List<String> teamMembers = List.of(
-                    "arturo1414zv@gmail.com",
-                    "arturo1414zv@hotmail.com"
+                    "2022221@utsh.edu.mx",
+                    "2022260@utsh.edu.mx",
+                    "2022578@utsh.edu.mx",
+                    "2021613@utsh.edu.mx"
                     );
             for (String teamMember : teamMembers){
                 MimeMessage message = mailSender.createMimeMessage();

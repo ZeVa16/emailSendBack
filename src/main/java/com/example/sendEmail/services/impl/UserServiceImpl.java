@@ -1,11 +1,9 @@
 package com.example.sendEmail.services.impl;
-
 import com.example.sendEmail.dtos.userDtos.UserResponse;
 import com.example.sendEmail.models.UserModel;
 import com.example.sendEmail.repository.UserRepository;
 import com.example.sendEmail.services.UserService;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -19,6 +19,6 @@ public class CalendlyWebHookControllerImpl implements CalendlyWebHookController 
     @Override
     public ResponseEntity<String> receiveWebhook(@RequestBody CalendlyWebHookPayloadModel webhookPayload) {
         webHookService.processWebhook(webhookPayload);
-        return ResponseEntity.ok("Webhook procesado correctamente");
+        return ResponseEntity.ok("Data received successfully ");
     }
 }

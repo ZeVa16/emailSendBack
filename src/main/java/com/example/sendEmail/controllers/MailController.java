@@ -14,6 +14,4 @@ public interface MailController {
 
     @PostMapping("/send")
     ResponseEntity<ApiResponse<MailResponse>> sendEmail(@RequestBody MailRequest mailRequest);
-
-
     }

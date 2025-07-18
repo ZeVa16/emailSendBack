@@ -12,15 +12,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MailRequest {
-    @NotBlank(message = "the name is required")
-    private String name;
-    @NotBlank(message = "the date is required")
-    private String date;
-    @NotBlank(message = "the email address is required")
-    @Email(message = "the email should be valid")
-    private String to;
-    private String subject;
-    private String reason;
+        @NotBlank(message = "the name is required")
+        private String name;
+        @NotBlank(message = "the date is required")
+        private String date;
+        @NotBlank(message = "the email address is required")
+        @Email(message = "the email should be valid")
+        private String to;
+        private String subject;
+        private String reason;
 
 
 }
