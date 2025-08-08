@@ -1,5 +1,6 @@
 package com.example.sendEmail.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,9 +16,12 @@ public class ProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Long image;
     private String name;
-    private Float price;
+    private Double price;
+
+
+
+
 
 }

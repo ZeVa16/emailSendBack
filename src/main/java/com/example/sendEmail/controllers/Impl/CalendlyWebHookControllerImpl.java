@@ -1,14 +1,14 @@
 package com.example.sendEmail.controllers.Impl;
 
 import com.example.sendEmail.controllers.CalendlyWebHookController;
-import com.example.sendEmail.models.CalendlyWebHookPayloadModel;
+import com.example.sendEmail.models.MailModels.CalendlyWebHookPayloadModel;
 import com.example.sendEmail.services.CalendlyWebHookService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 
+@RestController
 public class CalendlyWebHookControllerImpl implements CalendlyWebHookController {
 
     private final CalendlyWebHookService webHookService;

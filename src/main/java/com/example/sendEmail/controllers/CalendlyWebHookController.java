@@ -1,6 +1,6 @@
 package com.example.sendEmail.controllers;
 
-import com.example.sendEmail.models.CalendlyWebHookPayloadModel;
+import com.example.sendEmail.models.MailModels.CalendlyWebHookPayloadModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

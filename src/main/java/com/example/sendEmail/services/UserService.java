@@ -1,11 +1,13 @@
 package com.example.sendEmail.services;
 
 
-import com.example.sendEmail.dtos.userDtos.UserResponse;
+import com.example.sendEmail.dtos.userDtos.AuthResponse;
+import com.example.sendEmail.models.UserModel;
 
 import java.util.List;
 
 public interface UserService {
 
-    List<UserResponse> getAllUsers();
+
+    UserModel register(String name, String email, String password);
 }

@@ -2,15 +2,14 @@ package com.example.sendEmail.dtos.userDtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
-public class UserResponse {
+public class UserRegisterRequest {
     private String name;
-    private Integer points;
+    private String password;
+    private String email;
 
 }

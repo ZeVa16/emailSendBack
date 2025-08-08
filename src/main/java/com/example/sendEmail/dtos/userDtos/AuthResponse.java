@@ -1,4 +1,4 @@
-package com.example.sendEmail.models;
+package com.example.sendEmail.dtos.userDtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuestionAnswer{
-    private String question;
-    private String answer;
+public class AuthResponse {
+
+    private String token;
+
 }

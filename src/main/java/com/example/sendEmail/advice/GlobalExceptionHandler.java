@@ -1,6 +1,7 @@
 package com.example.sendEmail.advice;
 
 import com.example.sendEmail.dtos.ApiResponse;
+import com.example.sendEmail.exceptions.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -27,6 +28,18 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .build();
         return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
+
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<ApiResponse<String>> handleUserNotFound(NotFoundException e) {
+
+        ApiResponse<String> response = ApiResponse.<String>builder()
+                .message(e.getMessage())
+                .data(null)
+                .status(e.getStatus())
+                .build();
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 
     }
 

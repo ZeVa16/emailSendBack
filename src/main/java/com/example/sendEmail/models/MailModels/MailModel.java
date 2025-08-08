@@ -1,7 +1,6 @@
-package com.example.sendEmail.models;
+package com.example.sendEmail.models.MailModels;
 
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 

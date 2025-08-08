@@ -1,7 +1,7 @@
 package com.example.sendEmail.services.impl;
 import com.example.sendEmail.dtos.MailRequest;
-import com.example.sendEmail.models.CalendlyWebHookPayloadModel;
-import com.example.sendEmail.models.QuestionAnswer;
+import com.example.sendEmail.models.MailModels.CalendlyWebHookPayloadModel;
+import com.example.sendEmail.models.MailModels.QuestionAnswer;
 import com.example.sendEmail.services.CalendlyWebHookService;
 import com.example.sendEmail.services.SendEmailService;
 import org.springframework.beans.factory.annotation.Value;

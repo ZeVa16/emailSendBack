@@ -1,4 +1,4 @@
-package com.example.sendEmail.models;
+package com.example.sendEmail.models.MailModels;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

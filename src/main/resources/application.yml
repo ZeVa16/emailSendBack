@@ -32,4 +32,4 @@ calendly:
 security:
   jwt:
     secret-key: ${JWT_SECRET_KEY}
-    exipration-time: ${JWT_EXPIRATION_TIME}
+    expiration-time: ${JWT_EXPIRATION_TIME}
