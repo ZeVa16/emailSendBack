@@ -1,8 +1,10 @@
 package com.example.sendEmail.security;
 import com.example.sendEmail.models.UserModel;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
 import java.util.Base64;
 import java.util.Date;
+import java.util.Map;
 
 
 @Component
@@ -20,6 +23,9 @@ public class JwtUtils  {
     private final SecretKey key;
     private final int jwtExpirationTime;
 
+    @Value("${security.jwt.secret-key}")
+    private String secretKey;
+
     public JwtUtils(
             @Value("${security.jwt.secret-key}") String secret,
             @Value("${security.jwt.expiration-time}") int expirationTime) {
@@ -28,9 +34,10 @@ public class JwtUtils  {
         this.jwtExpirationTime = expirationTime;
     }
 
-    public String generateToken(String email) {
+    public String generateToken(String email,String name,Integer points) {
         return Jwts.builder()
                 .setSubject(email)
+                .setClaims(Map.of("name", name, "email", email,"points",points))
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationTime))
                 .signWith(key)
@@ -59,5 +66,17 @@ public class JwtUtils  {
     public boolean validateToken(String token, UserDetails userDetails) {
         String username = getEmail(token);
         return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
+    }
+
+    public String extractTokenFromHeaders(HttpServletRequest request) {
+        var authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            return authHeader.substring(7);
+        }
+        return null;
+    }
+
+    public Claims getAllClaimsFromToken(String token) {
+       return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
     }
 }

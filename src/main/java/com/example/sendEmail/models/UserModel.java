@@ -17,7 +17,7 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @Column(unique = true)
+    @Column(name= "email",unique = true)
     private String email;
     private String password;
     private Integer points;
